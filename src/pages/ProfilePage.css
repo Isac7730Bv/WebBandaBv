@@ -1,0 +1,131 @@
+.profile-page {
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at top right, rgba(255, 214, 10, 0.24), transparent 28rem),
+    linear-gradient(135deg, #071426 0%, #082756 52%, #061326 100%);
+}
+
+.profile-page__shell {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+}
+
+.profile-page__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profile-page__brand {
+  margin: 0;
+  color: #ffd60a;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-page__button {
+  width: auto;
+  border: 1px solid rgba(255, 214, 10, 0.55);
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  color: #082756;
+  font: inherit;
+  font-weight: 800;
+  background: #ffd60a;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.profile-page__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 214, 10, 0.24);
+}
+
+.profile-page__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.profile-page__card,
+.profile-page__panel {
+  border: 1px solid rgba(255, 214, 10, 0.22);
+  border-radius: 1.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
+}
+
+.profile-page__card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.profile-page__eyebrow {
+  margin: 0 0 0.8rem;
+  color: #ffd60a;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profile-page__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.profile-page__description {
+  max-width: 620px;
+  margin: 1.2rem 0 0;
+  color: #dbeafe;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.profile-page__panel {
+  padding: 1.5rem;
+}
+
+.profile-page__panel h2 {
+  margin: 0 0 1rem;
+  color: #ffd60a;
+}
+
+.profile-page__list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile-page__list li {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: #071426;
+  font-weight: 800;
+  background: linear-gradient(160deg, #fff8d1 0%, #ffd60a 100%);
+}
+
+@media (max-width: 760px) {
+  .profile-page {
+    padding-top: 2rem;
+  }
+
+  .profile-page__nav,
+  .profile-page__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-page__nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
