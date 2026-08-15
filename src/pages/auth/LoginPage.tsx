@@ -9,13 +9,18 @@ import { authRepository } from "../../repositories/authRepository";
 import type { LoginCredentials } from "../../types/auth";
 
 
+const getProfilePathByRole = (role: string) =>
+  role === "ADMIN" ? "/perfil-admin" : "/perfil-usuario";
+
+
 function LoginPage() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const currentUser = authRepository.getCurrentUser();
 
 
-  if (authRepository.isAuthenticated()) {
-    return <Navigate to="/" replace />;
+  if (currentUser) {
+    return <Navigate to={getProfilePathByRole(currentUser.role)} replace />;
   }
 
 
@@ -32,7 +37,7 @@ function LoginPage() {
     }
 
 
-    navigate("/", { replace: true });
+    navigate(getProfilePathByRole(user.role), { replace: true });
   };
 
 
