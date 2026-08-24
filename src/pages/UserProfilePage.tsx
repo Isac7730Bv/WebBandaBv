@@ -1,5 +1,6 @@
 import { Navigate, useNavigate } from "react-router-dom";
 
+import { attendanceRepository } from "../repositories/attendanceRepository";
 import { authRepository } from "../repositories/authRepository";
 
 import "./ProfilePage.css";
@@ -20,6 +21,8 @@ function UserProfilePage() {
     authRepository.logout();
     navigate("/login", { replace: true });
   };
+
+  const attendance = attendanceRepository.getAttendanceForUser(user.id);
 
   return (
     <main className="profile-page">
@@ -49,6 +52,34 @@ function UserProfilePage() {
               <li>Estado: Integrante activo</li>
             </ul>
           </aside>
+        </section>
+
+        <section className="attendance attendance--history" aria-labelledby="my-attendance-title">
+          <div className="attendance__header">
+            <div>
+              <p className="profile-page__eyebrow">Mi registro</p>
+              <h2 id="my-attendance-title">Mi asistencia</h2>
+              <p>Consulta los estados que el administrador ha registrado para ti.</p>
+            </div>
+          </div>
+
+          {attendance.length === 0 ? (
+            <p className="attendance__empty">Aún no hay asistencias registradas para tu perfil.</p>
+          ) : (
+            <div className="attendance__table-wrap">
+              <table className="attendance__table">
+                <thead><tr><th>Fecha</th><th>Estado</th></tr></thead>
+                <tbody>
+                  {attendance.map((entry) => (
+                    <tr key={`${entry.date}-${entry.userId}`}>
+                      <td>{entry.date}</td>
+                      <td><span className={`attendance__badge attendance__badge--${entry.status.toLowerCase()}`}>{entry.status[0]}{entry.status.slice(1).toLowerCase()}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </section>
       </div>
     </main>
