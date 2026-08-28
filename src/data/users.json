@@ -11,6 +11,9 @@
     "name": "Usuario de prueba",
     "carnet": "123",
     "password": "user",
-    "role": "USUARIO"
+    "role": "USUARIO",
+    "instrument": "Trompeta",
+    "instrumentCode": "TRP-001",
+    "isActive": true
   }
 ]

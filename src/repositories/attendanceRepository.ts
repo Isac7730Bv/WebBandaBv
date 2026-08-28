@@ -1,19 +1,15 @@
-import initialUsers from "../data/users.json";
 import { storageService } from "../services/storageService";
 
 import type { AttendanceEntry, AttendanceStatus } from "../types/attendance";
-import type { User, UserRecord } from "../types/auth";
+import type { User } from "../types/auth";
+import { authRepository } from "./authRepository";
 
 const ATTENDANCE_KEY = "app_attendance";
-const users = initialUsers as UserRecord[];
 
 const getStoredEntries = (): AttendanceEntry[] =>
   storageService.get<AttendanceEntry[]>(ATTENDANCE_KEY) ?? [];
 
-const getMembers = (): User[] =>
-  users
-    .filter((user) => user.role === "USUARIO")
-    .map(({ id, name, carnet, role }) => ({ id, name, carnet, role }));
+const getMembers = (): User[] => authRepository.getMembers();
 
 export const attendanceRepository = {
   getMembers,
