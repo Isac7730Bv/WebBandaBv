@@ -7,26 +7,52 @@
     linear-gradient(135deg, #071426 0%, #082756 52%, #061326 100%);
 }
 
-.profile-page__shell {
-  width: min(1040px, 100%);
+.profile-layout {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  width: min(1240px, 100%);
   margin: 0 auto;
+  gap: 2rem;
 }
 
-.profile-page__nav {
+.profile-content {
+  min-width: 0;
+}
+
+.profile-content__header {
+  margin-bottom: 1.5rem;
+}
+
+.profile-sidebar {
   display: flex;
+  position: sticky;
+  top: 1.5rem;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 2rem;
+  align-self: start;
+  min-height: calc(100vh - 3rem);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 214, 10, 0.22);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(16px);
 }
 
-.profile-page__brand {
+.profile-sidebar__brand {
   margin: 0;
   color: #ffd60a;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+.profile-sidebar__role { margin: 0.65rem 0 2rem; color: #dbeafe; font-weight: 700; }
+.profile-sidebar__nav { display: grid; gap: 0.7rem; }
+.profile-sidebar__link { display: block; padding: 0.9rem 1rem; border-radius: 0.85rem; color: #f8fafc; font-weight: 800; text-decoration: none; transition: background 180ms ease, color 180ms ease; }
+.profile-sidebar__link:hover, .profile-sidebar__link.is-active { color: #071426; background: #ffd60a; }
+.profile-sidebar__logout { margin-top: 2rem; border: 1px solid rgba(255, 214, 10, 0.55); border-radius: 0.85rem; padding: 0.8rem 1rem; color: #f8fafc; font: inherit; font-weight: 800; background: transparent; cursor: pointer; }
+.profile-sidebar__logout:hover { background: rgba(255, 214, 10, 0.15); }
 
 .profile-page__button {
   width: auto;
@@ -158,14 +184,21 @@
     padding-top: 2rem;
   }
 
-  .profile-page__nav,
+  .profile-layout,
   .profile-page__hero {
     grid-template-columns: 1fr;
   }
 
-  .profile-page__nav {
-    align-items: flex-start;
-    flex-direction: column;
+  .profile-layout { gap: 1.25rem; }
+
+  .profile-sidebar {
+    position: static;
+    min-height: 0;
+    gap: 1.5rem;
+  }
+
+  .profile-sidebar__role {
+    margin-bottom: 1rem;
   }
 
   .attendance__header { align-items: flex-start; flex-direction: column; }
