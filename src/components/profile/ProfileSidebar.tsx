@@ -31,6 +31,7 @@ function ProfileSidebar({ user }: ProfileSidebarProps) {
           >
             Mi perfil
           </NavLink>
+          
           {isAdmin && (
             <NavLink
               className={({ isActive }) => `profile-sidebar__link ${isActive ? "is-active" : ""}`}
@@ -39,6 +40,7 @@ function ProfileSidebar({ user }: ProfileSidebarProps) {
               Lista de estudiantes
             </NavLink>
           )}
+
           <NavLink
             className={({ isActive }) => `profile-sidebar__link ${isActive ? "is-active" : ""}`}
             to={attendancePath}
