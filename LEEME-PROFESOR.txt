@@ -1,0 +1,57 @@
+SISTEMA DE BANDA ESTUDIANTIL - Instrucciones rápidas
+=====================================================
+
+Esta carpeta ya trae todo lo necesario para funcionar (incluye su
+propio Node.js portátil). NO necesita internet ni instalar nada.
+
+CÓMO EJECUTAR LA APLICACIÓN
+----------------------------
+1. Haz doble clic en "1-Iniciar-Aplicacion.bat".
+2. Se abrirá una ventana negra (el servidor) — NO LA CIERRES mientras
+   uses la aplicación. Minimízala si quieres, pero no la cierres.
+3. En unos segundos se abrirá automáticamente tu navegador en:
+   http://localhost:3001
+4. Si el navegador no se abre solo, entra tú mismo a esa dirección.
+
+Para cerrar la aplicación al terminar, cierra la ventana negra del
+servidor.
+
+USUARIOS DE PRUEBA
+-------------------
+Administrador:
+  Carnet: 1234567
+  Contraseña: admin123
+
+Estudiante de ejemplo:
+  Carnet: 123
+  Contraseña: user
+
+CÓMO VER EL CÓDIGO FUENTE
+--------------------------
+Haz doble clic en "2-Ver-Codigo.bat". Si tienes Visual Studio Code
+instalado, se abrirá el proyecto completo ahí. Si no, se abrirá la
+carpeta del proyecto para explorar los archivos directamente:
+
+  src\               -> Código del frontend (React + TypeScript)
+  server\            -> Código del backend (Express)
+  server\db.js       -> Configuración de la base de datos SQLite
+  server\index.js    -> Rutas de la API (login, estudiantes, asistencia)
+
+DÓNDE SE GUARDAN LOS DATOS
+----------------------------
+Todo se guarda en un archivo real de base de datos SQLite en:
+  server\data\banda.db
+Los estudiantes y la asistencia que se registren quedan guardados ahí
+mientras no se borre ese archivo (queda en ESTA copia del proyecto,
+no en la computadora del profesor).
+
+SI ALGO NO FUNCIONA
+---------------------
+- Si al hacer doble clic Windows muestra una advertencia de seguridad
+  ("Windows protegió su PC"), haz clic en "Más información" y luego
+  en "Ejecutar de todas formas". Esto pasa por venir de una memoria
+  USB, es normal y seguro.
+- Si la ventana del servidor se cierra sola con un error, revisa el
+  mensaje que muestra antes de cerrarse (probablemente falte algún
+  archivo de la carpeta — asegúrate de haber copiado TODA la carpeta
+  del proyecto al flash, incluyendo "runtime", "node_modules" y "dist").

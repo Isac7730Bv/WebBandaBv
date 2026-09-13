@@ -1,0 +1,143 @@
+/* Fondo de la página */
+.login-page {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at 0 0, rgba(255, 210, 63, 0.28), transparent 32rem),
+    linear-gradient(135deg, #061832 0%, #0a254b 48%, #071426 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contenedor del formulario */
+.login-form {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  width: 360px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Título */
+.login-form h1 {
+  text-align: center;
+  color: #FFD60A;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Espaciado entre campos */
+.login-form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+/* Etiquetas */
+.login-form label {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Inputs */
+.login-form input {
+  padding: 12px 15px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.login-form input:focus {
+  border-color: #FFD60A;
+  box-shadow: 0 0 10px rgba(255, 214, 10, 0.5);
+}
+
+/* Placeholder */
+.login-form input::placeholder {
+  color: #888;
+}
+
+/* Botón */
+.login-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #FFD60A;
+  color: #001f54;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background: #ffea4d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(255, 214, 10, 0.4);
+}
+
+.login-form button:active {
+  transform: scale(0.98);
+}
+
+/* Mensaje de error */
+.login-form p[role="alert"] {
+  background: rgba(255, 77, 77, 0.15);
+  border-left: 4px solid #ff4d4d;
+  color: #ffdede;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-form {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
+.logo {
+  display: block;
+  width: 110px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 15px;
+  filter: drop-shadow(0 0 10px rgba(255, 214, 10, 0.5));
+}
+
+.login-form__back-link {
+  display: block;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.login-form__back-link:hover {
+  color: #ffd60a;
+  text-decoration: underline;
+}
+.login-form h1::after {
+  content: "Banda Juvenil";
+  display: block;
+  font-size: 0.9rem;
+  color: white;
+  font-weight: normal;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,53 @@
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.media-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 214, 10, 0.22);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.media-card__header { display: grid; gap: 0.35rem; }
+
+.media-card__badge {
+  justify-self: start;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  color: #071426;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #ffd60a;
+}
+
+.media-card__badge--audio { background: #6cd4ff; }
+
+.media-card__title { margin: 0; color: #fff; font-size: 1.05rem; }
+.media-card__instrument { margin: 0; color: #dbeafe; font-size: 0.85rem; }
+
+.media-card__frame-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: #000;
+}
+
+.media-card__frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.media-card__link { align-self: flex-start; text-decoration: none; }

@@ -1,0 +1,96 @@
+.rte {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.rte-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.rte-toolbar__button {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(255, 214, 10, 0.35);
+  border-radius: 0.6rem;
+  color: #ffd60a;
+  font: inherit;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.rte-toolbar__button:hover {
+  background: rgba(255, 214, 10, 0.16);
+}
+
+.rte-toolbar__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rte-toolbar__button--format {
+  min-width: 2.4rem;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.rte-video-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.rte-video-input input {
+  flex: 1 1 260px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.rte-editable {
+  min-height: 320px;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  color: #fff;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rte-editable:focus {
+  outline: 2px solid rgba(255, 214, 10, 0.5);
+}
+
+.rte-editable:empty::before {
+  content: attr(data-placeholder);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.rte-editable img {
+  max-width: 100%;
+  border-radius: 0.6rem;
+}
+
+.rte-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding-top: 56.25%;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  background: #000;
+}
+
+.rte-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
