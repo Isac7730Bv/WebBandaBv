@@ -4,7 +4,7 @@
   color: #fff7d6;
   background:
     radial-gradient(circle at top left, rgba(255, 210, 63, 0.28), transparent 32rem),
-    linear-gradient(135deg, #061832 0%, #0a254b 48%, #071426 100%);
+    linear-gradient(135deg, rgb(50, 27, 6) 0%, rgb(76, 10, 10) 48%, rgb(38, 8, 7) 100%);
 }
 
 .home-page__topbar {
@@ -21,7 +21,7 @@
   color: #ffd53f;
   font: inherit;
   font-weight: 800;
-  background: rgba(5, 18, 38, 0.78);
+  background: rgba(38, 5, 5, 0.78);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
   cursor: pointer;
   backdrop-filter: blur(14px);
